@@ -128,8 +128,11 @@ if st.button("Predict"):
 
     prediction = model.predict(row_scaled)[0]
 
-    st.success(f"✅ Prediction: {prediction}")
-
+    if prediction == 1:
+         st.error("🔴 Prediction: Churned")
+    else:
+        st.success("🟢 Prediction: Not Churned")
+        
     if hasattr(model, "predict_proba"):
         proba = model.predict_proba(row_scaled)[0]
         st.write("Probabilities:", proba)
