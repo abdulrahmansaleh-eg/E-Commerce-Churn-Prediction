@@ -53,6 +53,35 @@ CITIES = [
 QUARTERS = ["Q1", "Q2", "Q3", "Q4"]
 
 st.set_page_config(page_title="Customer Prediction", layout="centered")
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #0E1117;
+    }
+
+    h1 {
+        color: #00C2A8;
+    }
+
+    .stButton > button {
+        background-color: #00C2A8;
+        color: white;
+        border-radius: 8px;
+        padding: 0.6em 2em;
+        font-weight: bold;
+        border: none;
+    }
+    .stButton > button:hover {
+        background-color: #00A88F;
+        color: white;
+    }
+
+    .stSuccess {
+        background-color: #1A3C34;
+        border-radius: 8px;
+    }
+    </style>
+""", unsafe_allow_html=True)
 st.title("🔮 Customer Prediction App")
 st.write("Fill in the customer details to get the prediction")
 
