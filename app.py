@@ -54,9 +54,6 @@ QUARTERS = ["Q1", "Q2", "Q3", "Q4"]
 
 st.set_page_config(page_title="Customer Prediction", layout="centered")
 
-# ============================================================
-# تخصيص الشكل (CSS) — نسخة مودرن، منظفة ومظبوطة
-# ============================================================
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap');
@@ -65,13 +62,11 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
 
-    /* خلفية متدرجة هادئة */
     .stApp {
         background: radial-gradient(circle at 20% 0%, #1B1F3B 0%, #0B0D1A 60%);
         color: #E8E8F0;
     }
 
-    /* العنوان */
     h1 {
         font-family: 'Space Grotesk', sans-serif;
         font-weight: 700;
@@ -81,12 +76,10 @@ st.markdown("""
         letter-spacing: -0.5px;
     }
 
-    /* وصف تحت العنوان */
     .stApp p {
-        color: #9A9AB5;
+        color: #ffffff;
     }
 
-    /* بطاقة زجاجية حوالين الـ inputs */
     div[data-testid="column"] {
         background: rgba(255, 255, 255, 0.04);
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -95,14 +88,12 @@ st.markdown("""
         backdrop-filter: blur(6px);
     }
 
-    /* تسميات الـ inputs */
     label {
         color: #C4C4E0 !important;
         font-weight: 500 !important;
         font-size: 0.85em !important;
     }
 
-    /* صناديق الأرقام (زي Age) - خلفية غامقة + خط واضح */
     .stNumberInput input {
         background-color: #1B1F3B !important;
         color: #FFFFFF !important;
@@ -110,19 +101,18 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.6) !important;
     }
 
-    /* أزرار +/- بتاعة العداد */
     .stNumberInput button {
         background-color: #262B4D !important;
         color: #FFFFFF !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
-        /* صندوق الـ Selectbox (Gender, Country, City, Signup Quarter) - selector أقوى وأعم */
     [data-testid="stSelectbox"] > div > div,
     [data-testid="stSelectbox"] div[data-baseweb="select"],
     [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
         background-color: #1B1F3B !important;
         border: 1px solid rgba(255, 255, 255, 0.6) !important;
+        caret-color: #FFFFFF !important;
         border-radius: 10px !important;
     }
 
@@ -134,7 +124,6 @@ st.markdown("""
         fill: #C4C4E0 !important;
     }
 
-    /* القائمة اللي بتفتح لما تدوس على الـ Selectbox */
     ul[data-baseweb="menu"],
     div[data-baseweb="popover"] ul {
         background-color: #1B1F3B !important;
@@ -151,9 +140,6 @@ st.markdown("""
         background-color: #2CB1BC !important;
     }
 
-    /* ============================================================
-       زرار Predict - الشكل النهائي (عريض، متدرج، واضح، مع حركة hover)
-       ============================================================ */
     .stButton {
         display: flex;
         justify-content: center;
@@ -193,7 +179,6 @@ st.markdown("""
         transform: translateY(0px);
     }
 
-    /* رسالة النتيجة (Churned / Not Churned) */
     div[data-testid="stAlert"] {
         border-radius: 12px;
     }
