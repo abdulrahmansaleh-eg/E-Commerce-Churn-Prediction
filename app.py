@@ -5,18 +5,13 @@ import joblib
 
 
 MODEL_PATH = "xgboost_tuned.pkl"
-SCALER_PATH = "scaler.pkl"
 
 @st.cache_resource
 def load_model():
     return joblib.load(MODEL_PATH)
 
-@st.cache_resource
-def load_scaler():
-    return joblib.load(SCALER_PATH)
 
 model = load_model()
-scaler = load_scaler()
 
 
 ENCODED_COLUMNS = [
@@ -255,8 +250,6 @@ if st.button("Predict"):
     quarter_col = f"Signup_Quarter_{signup_quarter}"
     if quarter_col in ENCODED_COLUMNS:
         row.loc[0, quarter_col] = 1
-
-    row_scaled = scaler.transform(row)
 
     prediction = model.predict(row_scaled)[0]
 
