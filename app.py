@@ -116,31 +116,37 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
 
-    /* صندوق الـ Selectbox نفسه (Gender, Country, City, Signup Quarter) */
-    .stSelectbox div[data-baseweb="select"] > div {
+        /* صندوق الـ Selectbox (Gender, Country, City, Signup Quarter) - selector أقوى وأعم */
+    [data-testid="stSelectbox"] > div > div,
+    [data-testid="stSelectbox"] div[data-baseweb="select"],
+    [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
         background-color: #1B1F3B !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 10px !important;
     }
 
-    .stSelectbox div[data-baseweb="select"] div,
-    .stSelectbox div[data-baseweb="select"] span {
+    [data-testid="stSelectbox"] * {
         color: #FFFFFF !important;
     }
 
-    .stSelectbox svg {
+    [data-testid="stSelectbox"] svg {
         fill: #C4C4E0 !important;
     }
 
     /* القائمة اللي بتفتح لما تدوس على الـ Selectbox */
-    ul[data-baseweb="menu"] {
+    ul[data-baseweb="menu"],
+    div[data-baseweb="popover"] ul {
         background-color: #1B1F3B !important;
     }
 
-    ul[data-baseweb="menu"] li {
+    ul[data-baseweb="menu"] li,
+    div[data-baseweb="popover"] ul li {
         color: #FFFFFF !important;
+        background-color: #1B1F3B !important;
     }
 
-    ul[data-baseweb="menu"] li:hover {
+    ul[data-baseweb="menu"] li:hover,
+    div[data-baseweb="popover"] ul li:hover {
         background-color: #2CB1BC !important;
     }
 
