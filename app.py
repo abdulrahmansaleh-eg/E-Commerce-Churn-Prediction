@@ -135,8 +135,19 @@ st.markdown("""
         color: #E8E8F0;
     }
         /* لون الخط جوا صناديق الإدخال - عشان يبقى واضح */
+        /* صناديق الأرقام (زي Age) - خلفية غامقة + خط واضح */
     .stNumberInput input {
+        background-color: #1B1F3B !important;
         color: #FFFFFF !important;
+        caret-color: #FFFFFF !important;
+    }
+
+    /* أزرار +/- بتاعة العداد */
+    .stNumberInput button {
+        background-color: #262B4D !important;
+        color: #FFFFFF !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
     }
 
     .stSelectbox div[data-baseweb="select"] span {
