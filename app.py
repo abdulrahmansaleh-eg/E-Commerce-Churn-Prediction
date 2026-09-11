@@ -56,7 +56,7 @@ st.set_page_config(page_title="Customer Prediction", layout="centered")
 st.markdown("""
     <style>
     .stApp {
-        background-color: ##cce5cc;
+        background-color: #66839e;
     }
 
     h1 {
