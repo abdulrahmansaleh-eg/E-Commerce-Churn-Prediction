@@ -60,7 +60,7 @@ st.markdown("""
     }
 
     h1 {
-        color: #00C2A8;
+        color: #d8f8cc;
     }
 
     .stButton > button {
