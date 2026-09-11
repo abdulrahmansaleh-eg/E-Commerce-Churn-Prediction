@@ -134,6 +134,19 @@ st.markdown("""
         border-radius: 12px;
         color: #E8E8F0;
     }
+        /* لون الخط جوا صناديق الإدخال - عشان يبقى واضح */
+    .stNumberInput input {
+        color: #FFFFFF !important;
+    }
+
+    .stSelectbox div[data-baseweb="select"] span {
+        color: #FFFFFF !important;
+    }
+
+    /* السهم بتاع القائمة المنسدلة */
+    .stSelectbox svg {
+        fill: #C4C4E0 !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 st.title("🔮 Customer Prediction App")
