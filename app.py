@@ -101,26 +101,39 @@ st.markdown("""
         font-size: 0.85em !important;
     }
 
-    /* صناديق الإدخال */
-    .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
-        background-color: rgba(255, 255, 255, 0.06) !important;
-        border-radius: 10px !important;
+       /* صندوق الـ Selectbox نفسه (Gender, Country, City, Signup Quarter) */
+    .stSelectbox div[data-baseweb="select"] > div {
+        background-color: #1B1F3B !important;
+        color: #FFFFFF !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: #E8E8F0 !important;
     }
 
-    /* زرار Predict */
-    .stButton > button {
-        background: linear-gradient(90deg, #7F5AF0, #2CB1BC);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 0.7em 2.4em;
-        font-weight: 600;
-        font-family: 'Space Grotesk', sans-serif;
-        letter-spacing: 0.3px;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-        box-shadow: 0 4px 18px rgba(127, 90, 240, 0.35);
+    .stSelectbox div[data-baseweb="select"] span {
+        color: #FFFFFF !important;
+    }
+
+    .stSelectbox svg {
+        fill: #C4C4E0 !important;
+    }
+
+    /* القائمة اللي بتفتح لما تدوس على الـ Selectbox */
+    ul[data-baseweb="menu"] {
+        background-color: #1B1F3B !important;
+    }
+
+    ul[data-baseweb="menu"] li {
+        color: #FFFFFF !important;
+    }
+
+    ul[data-baseweb="menu"] li:hover {
+        background-color: #2CB1BC !important;
+    }
+
+    /* زرار Predict - يضمن ظهور النص واضح فوق التدرج */
+    .stButton > button,
+    .stButton > button p,
+    .stButton > button div {
+        color: #FFFFFF !important;
     }
     .stButton > button:hover {
         transform: translateY(-2px);
