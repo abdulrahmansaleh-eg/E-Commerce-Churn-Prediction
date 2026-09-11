@@ -77,7 +77,7 @@ st.markdown("""
     }
 
     .stSuccess {
-        background-color: #1A3C34;
+        background-color: ##cce5cc;
         border-radius: 8px;
     }
     </style>
