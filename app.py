@@ -251,7 +251,7 @@ if st.button("Predict"):
     if quarter_col in ENCODED_COLUMNS:
         row.loc[0, quarter_col] = 1
 
-    prediction = model.predict(row_scaled)[0]
+    prediction = model.predict(row)[0]
 
     if prediction == 1:
         st.error("🔴 Prediction: Churned")
