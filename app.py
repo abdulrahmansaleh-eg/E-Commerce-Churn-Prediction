@@ -53,32 +53,86 @@ CITIES = [
 QUARTERS = ["Q1", "Q2", "Q3", "Q4"]
 
 st.set_page_config(page_title="Customer Prediction", layout="centered")
+# ============================================================
+# تخصيص الشكل (CSS) — نسخة مودرن
+# ============================================================
 st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* خلفية متدرجة هادئة */
     .stApp {
-        background-color: #66839e;
+        background: radial-gradient(circle at 20% 0%, #1B1F3B 0%, #0B0D1A 60%);
+        color: #E8E8F0;
     }
 
+    /* العنوان */
     h1 {
-        color: #d8f8cc;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        background: linear-gradient(90deg, #7F5AF0, #2CB1BC);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.5px;
     }
 
+    /* وصف تحت العنوان */
+    .stApp p {
+        color: #9A9AB5;
+    }
+
+    /* بطاقة زجاجية حوالين الـ inputs */
+    div[data-testid="column"] {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 1.2em 1.4em;
+        backdrop-filter: blur(6px);
+    }
+
+    /* تسميات الـ inputs */
+    label {
+        color: #C4C4E0 !important;
+        font-weight: 500 !important;
+        font-size: 0.85em !important;
+    }
+
+    /* صناديق الإدخال */
+    .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+        border-radius: 10px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #E8E8F0 !important;
+    }
+
+    /* زرار Predict */
     .stButton > button {
-        background-color: #00C2A8;
+        background: linear-gradient(90deg, #7F5AF0, #2CB1BC);
         color: white;
-        border-radius: 8px;
-        padding: 0.6em 2em;
-        font-weight: bold;
         border: none;
+        border-radius: 10px;
+        padding: 0.7em 2.4em;
+        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: 0.3px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        box-shadow: 0 4px 18px rgba(127, 90, 240, 0.35);
     }
     .stButton > button:hover {
-        background-color: #00A88F;
-        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(44, 177, 188, 0.45);
     }
 
-    .stSuccess {
-        background-color: ##cce5cc;
-        border-radius: 8px;
+    /* رسالة النتيجة */
+    div[data-testid="stAlert"] {
+        background: rgba(44, 177, 188, 0.12);
+        border: 1px solid rgba(44, 177, 188, 0.4);
+        border-radius: 12px;
+        color: #E8E8F0;
     }
     </style>
 """, unsafe_allow_html=True)
