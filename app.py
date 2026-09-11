@@ -107,6 +107,7 @@ st.markdown("""
         background-color: #1B1F3B !important;
         color: #FFFFFF !important;
         caret-color: #FFFFFF !important;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
     }
 
     /* أزرار +/- بتاعة العداد */
@@ -121,7 +122,7 @@ st.markdown("""
     [data-testid="stSelectbox"] div[data-baseweb="select"],
     [data-testid="stSelectbox"] div[data-baseweb="select"] > div {
         background-color: #1B1F3B !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
         border-radius: 10px !important;
     }
 
